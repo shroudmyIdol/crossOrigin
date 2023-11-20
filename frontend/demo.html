@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <title>demo</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <input id="requestBtn" type="button" value="提交请求" />
+</body>
+
+<script type="text/javascript">
+  const reqBtn = document.getElementById("requestBtn");
+  reqBtn.addEventListener("click", () => {
+    axios
+      .post("http://127.0.0.1:3000/api/task")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  });
+</script>
